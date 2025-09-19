@@ -127,11 +127,10 @@ class CalculatorApp:
         self.menu_button = ttk.Button(self.window, text="≡", command=self.toggle_menu, width=4)
         self.menu_button.place(x=10, y=10)
 
-        # Side menu frame
-        self.menu_frame = tk.Frame(self.window, width=150, height=420, bg="#eeeeee")
-        self.menu_frame.place(x=-150, y=0)  # Hidden initially
 
-        # Add buttons to menu
+        self.menu_frame = tk.Frame(self.window, width=150, height=420, bg="#eeeeee")
+        self.menu_frame.place(x=-150, y=0)
+
         self.mode_label = tk.Label(self.menu_frame, text="Modes", bg="#eeeeee", font=("Arial", 14))
         self.mode_label.pack(pady=10)
 
@@ -571,7 +570,7 @@ class CalculatorApp:
             self.window.unbind("<Button-1>")
 
     def check_click_outside_menu(self, event):
-        if self.menu_open:  # was self.menu_visible before
+        if self.menu_open:
             x, y = event.x_root, event.y_root
             menu_x1 = self.menu_frame.winfo_rootx()
             menu_y1 = self.menu_frame.winfo_rooty()
@@ -594,16 +593,12 @@ class CalculatorApp:
 
     def update_display1(self):
         if self.is_it_decimal1 == 0:
-            # Show integer without decimal
             self.num1lay.config(text=f" {int(self.num1)}")
         else:
-            # Format number with fixed decimal places and trim trailing zeros
             format_str = f"{{:.{self.decimal_length1}f}}"
             text = format_str.format(self.num1)
-            # Remove trailing zeros and decimal if none remain, but keep decimal point if decimal mode ON
             if '.' in text:
                 text = text.rstrip('0').rstrip('.')
-            # If decimal mode ON but no decimals, add decimal point
             if self.decimal_length1 == 0:
                 text += '.'
             self.num1lay.config(text=f" {text}")
@@ -674,8 +669,7 @@ class CalculatorApp:
     def back_space_10r2(self):
         if self._1or2 == 1:
             if self.is_it_decimal1 == 0:
-                # Integer part backspace
-                self.num1 = int(self.num1)  # Ensure int type
+                self.num1 = int(self.num1)
                 self.num1 = self.num1 // 10 if self.num1 >= 10 else 0
                 self.update_display1()
             else:
@@ -685,7 +679,6 @@ class CalculatorApp:
                     self.num1 = int(self.num1 * factor) / factor
                     self.update_display1()
                 else:
-                    # Remove decimal point and convert to int type
                     self.is_it_decimal1 = 0
                     self.decimal_length1 = 0
                     self.num1 = int(self.num1)
@@ -693,7 +686,7 @@ class CalculatorApp:
 
         else:
             if self.is_it_decimal2 == 0:
-                self.num2 = int(self.num2)  # Ensure int type
+                self.num2 = int(self.num2)
                 self.num2 = self.num2 // 10 if self.num2 >= 10 else 0
                 self.update_display2()
             else:
@@ -754,7 +747,7 @@ class CalculatorApp:
             else:
                 self.ans = None
         else:
-            self.ans = None  # In case no operation is selected
+            self.ans = None
         self.update_ans()
 
 
