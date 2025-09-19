@@ -192,7 +192,6 @@ class CalculatorApp:
             self.lay6.destroy()
             self.lay6 = None
 
-
         if self.in1:
             self.in1.destroy()
             self.in1 = None
