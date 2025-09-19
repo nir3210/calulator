@@ -18,11 +18,29 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "nir3210"
+  }
+}]]></component>
   <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="2db414a0-fb1f-483c-a567-e6e3dc198b5a" />
+    <option name="defaultAccountId" value="5ae44397-cac0-4b24-aa2a-1b1b09dcc45c" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:nir3210/calulator.git",
+    "accountId": "5ae44397-cac0-4b24-aa2a-1b1b09dcc45c"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 5
 }]]></component>
@@ -72,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758313102350</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="create">
+      <option name="closed" value="true" />
+      <created>1758313289873</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1758313289873</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
